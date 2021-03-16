@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    while(1){
+      let num=Math.floor(Math.random()*6);
+      let guess=prompt('输一个0-5数：');
+      if(num==guess){
+        document.write('猜对了');
+        break;
+      }else{
+        document.write('猜错了');
+      }if(guess>=6 || guess<=0){
+        prompt('请重输：');
+      }else{
+        //结束当前小循环，直接从头开始进行下一次循环
+        //continue;
+      }
+  }
+  </script>
+</body>
+</html>
