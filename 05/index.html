@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function bark(Name,Weight){
+      if(Weight>=10){
+        console.log(Name+'汪汪叫')
+      }else{
+        console.log(Name+'呜呜叫')
+      }
+    };
+    let dName='张三';
+    let dWeight=20;
+    bark(dName,dWeight);
+    dName='李四';
+    dWeight=5;
+    bark(dName,dWeight);
+    //自定义
+    function wu(){
+      console.log('1')
+    };
+    wu();
+    //⚪
+    function yuan(s){
+      console.log(3.14*r*r);
+    };
+    r=5;
+    yuan(r);
+
+    function cfx(height,length){
+      return (height+length)*2;
+    }
+    h=4;
+    w=6;
+    console.log(cfx(h,w));
+    function sum(a,b,c){
+      return (a+b+c);
+    };
+    A=1;
+    B=2;
+    C=3;
+    console.log(sum(A,B,C));
+    function numOnes(x){
+      return x%10;
+    }
+    function baiwei(y){
+      return Math.floor(y/100);
+    }
+    function tens(z){
+      return Math.floor(z%100/10);
+    }
+    function isDaffodils(num){
+      let numOnes=getOnes(num);
+      let tens=getTens(num);
+      let baiwei=getHunders(num);
+      //没有特殊意义，保证sum不出错，一个初值
+      let sum=0;
+      sum=numOnes*numOnes*numOnes+tens*tens*tens+baiwei*baiwei*baiwei;
+      //let sum=Math.pow(numones,3)+Math.pow(tens,3)+Math.pow(baiwei,3)
+      if (num===sum){
+      return true;
+    }else{
+      return false;
+    }
+    }
+  </script>
+</body>
+</html>

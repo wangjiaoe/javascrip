@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 紫色 fucntion 关键字，表示开始定义函数
+        // 蓝色 bark 部分，函数的名字，和变量名一样，只要符合规则，可以随便起
+        // 亮黄色 (  )部分，函数的参数，用于说明执行这个函数需要提供的值
+        function bark(name, weight) {
+            if (weight >= 10) {
+                console.log(name + '汪汪叫');
+            } else {
+                console.log(name + '呜呜叫');
+            }
+        };
+
+        // 函数的调用，蓝色部分，即喊名字
+        // 函数的参数，黄色()部分，参数的传递
+        // 常量做参数
+        bark('旺财', 20);
+
+        // 变量做参数
+        let dogName = '来福';
+        let dogWeight = 8;
+        bark(dogName, dogWeight);
+
+        // 灵活的参数提供方式
+        dogWeight = 17;
+        bark('狗子', dogWeight);
+
+        let x = 5;
+        let y = 6;
+
+        function foo(paramX, paramY) {
+            console.log(paramX); // 6
+            console.log(paramY); // 5
+        }
+        // 分清楚调用和定义，什么是定义？什么是调用？
+
+        // 此处是函数的外部
+        foo(y, x);
+        // foo(6 , 5)
+
+        x = 5;
+        y = 6;
+
+        // 定义函数时，设置的参数，被称为形参
+        // 形式参数的意思
+        function bar(x, y) {
+            // 形参只在函数被调用后的，函数执行阶段才起作用
+            x = x + 1;
+            y = y * 2;
+            console.log(x);
+            console.log(y);
+        }
+
+        // 调用函数时，给定的参数，被称为实参
+        // 实际参数
+        bar(x, y);
+
+        // 实参只有在调用传值的时候影响一次形参
+        // 形参无论如何改变，实参都不变
+        console.log(x);
+        console.log(y);
+    </script>
+</body>
+
+</html>
