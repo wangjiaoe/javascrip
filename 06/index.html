@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getOnes(num){
+      return num%10;
+    }
+    function hunder(num){
+      return Math.floor(num/100);
+    }
+    function getens(num){
+      return Math.floor(num%100/10);
+    }
+    function isDaffodils(num){
+      let numOnes = getOnes(num);
+      let tens = getens(num);
+      let baiwei = hunder(num);
+      //没有特殊意义，保证sum不出错，一个初值
+      let sum=0;
+      // sum=numOnes*numOnes*numOnes+tens*tens*tens+baiwei*baiwei*baiwei;
+      sum=Math.pow(numOnes,3)+Math.pow(tens,3)+Math.pow(baiwei,3)
+      if (sum===num){
+      return true;
+    }else{
+      return false;
+    }
+    }
+    console.log(isDaffodils(234));
+    let count=100;
+    while (count<1000){
+      if(isDaffodils(count)){
+        console.log(count);
+      }
+      count++;
+    }
+  </script>
+</body>
+</html>
