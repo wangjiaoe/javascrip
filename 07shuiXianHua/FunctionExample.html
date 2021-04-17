@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 紫色 fucntion 关键字，表示开始定义函数
+        // 蓝色 bark 部分，函数的名字，和变量名一样，只要符合规则，可以随便起
+        // 亮黄色 (  )部分，函数的参数，用于说明执行这个函数需要提供的值
+        function bark(name, weight) {
+            if (weight >= 10) {
+                console.log(name + '汪汪叫');
+            } else {
+                console.log(name + '呜呜叫');
+            }
+        };
+
+        // 函数的调用，蓝色部分，即喊名字
+        // 函数的参数，黄色()部分，参数的传递
+        // 常量做参数
+        bark('旺财', 20);
+
+        // 变量做参数
+        let dogName = '来福';
+        let dogWeight = 8;
+        bark(dogName, dogWeight);
+
+        // 灵活的参数提供方式
+        dogWeight = 17;
+        bark('狗子', dogWeight);
+
+        let x = 5;
+        let y = 6;
+
+        function foo(paramX, paramY) {
+            console.log(paramX); // 6
+            console.log(paramY); // 5
+        }
+        // 分清楚调用和定义，什么是定义？什么是调用？
+
+        // 此处是函数的外部
+        foo(y, x);
+        // foo(6 , 5)
+
+        x = 5;
+        y = 6;
+
+        // 定义函数时，设置的参数，被称为形参
+        // 形式参数的意思
+        function bar(x, y) {
+            // 形参只在函数被调用后的，函数执行阶段才起作用
+            x = x + 1;
+            y = y * 2;
+        }
+
+        // 调用函数时，给定的参数，被称为实参
+        // 实际参数
+        bar(x, y);
+
+        // 实参只有在调用传值的时候影响一次形参
+        // 形参无论如何改变，实参都不变
+        console.log(x);
+        console.log(y);
+
+        function sayHi() {
+            console.log('hi');
+        }
+
+        sayHi();
+
+        // 自行设计一个不带参数的函数，并执行，查看运行结果
+        // 若有圆的半径r，设计一个函数，求圆的面积 PI = 3.14  PI*r*r
+        const PI = 3.14;
+        let banJin = 6;
+
+        // 这个函数并不好，因为这个函数做了两个工作
+        // 1 根据半径计算圆的面积
+        // 2 输出圆的面积
+        function area(r) {
+            // 当我们学习了return返回值的概念，就可以进行改造
+            // console.log(PI * r * r);
+            return PI * r * r;
+        }
+
+        // 当我和之前一样调用这个函数的时候，仍然能算出来圆的面积
+        // 但用户看不到结果了
+        console.log(area(banJin));
+
+
+        // 若已知长方形的长和宽，length, width，求长方形的周长
+        function zhouChang(width, length) {
+            return 2 * (width + length);
+
+        }
+        // 请改造成返回值的形式
+
+        zhouChang(10, 3);
+
+        // 求三个数相加的结果
+        function sum(num1, num2, num3) {
+            // 请改造成返回值的形式
+            return num1 + num2 + num3;
+        }
+
+        // 1 编写一个函数，提供一个三位数，返回值是这个数的个位数（ones）。
+        function getOnes(num) {
+            return num % 10;
+        }
+
+        // 2 编写一个函数，提供一个三位数，返回值是这个数的百位数(hundreds)。
+        function getHundreds(num) {
+            if (num < 1000) {
+                return Math.floor(num / 100);
+            } else {
+                return Math.floor(num % 1000 / 100);
+            }
+        }
+
+
+        // 3 编写一个函数， 提供一个三位数， 返回值是这个数的十位数(tens)。
+        function getTens(num) {
+            return Math.floor(num % 100 / 10);
+        }
+
+        function getThousands(num) {
+            return Math.floor(num / 1000);
+        }
+
+        // 如果一个三位数的个位数的三次方与十位数的三次方与百位数的三次方之和还是等于这个三位数，
+        // 那这个数就是水仙花数。
+        // 4 编写一个函数，输入一个三位数，判断他是不是水仙花数。返回 true 或 false
+        function isNarcissistic(num) {
+            let ones = getOnes(num);
+            let tens = getTens(num);
+            let hundreds = getHundreds(num);
+
+            let sum = 0;
+            // 以下两行等价
+            sum = ones * ones * ones + tens * tens * tens + hundreds * hundreds * hundreds;
+            sum = Math.pow(ones, 3) + Math.pow(tens, 3) + Math.pow(hundreds, 3);
+
+            if (sum === num) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // let count = 153;
+        // console.log(isNarcissistic(234)); // false
+        // console.log(isNarcissistic(count)); // true
+
+        // 请问这段代码干什么的？
+        let count = 100;
+        while (count < 1000) {
+            // 这句话决定了，该循环可以输出所有的三位数
+            // console.log(count);
+            // 如果判断水仙花数的结果是true，则输出当前循环到的count
+            if (isNarcissistic(count)) {
+                console.log(count);
+            }
+            // 否则，啥都别干
+            // 但是我现在，并不想要看有哪些三位数，
+            // 而是想找出所有的水仙花数，结合上节课的程序和这个循环，写出代码
+            count++;
+        }
+        // 求所有四位数的水仙花数
+        function isNarcissisticFour(num) {
+            let ones = getOnes(num);
+            let tens = getTens(num);
+            let hundreds = getHundreds(num);
+            let thousands = getThousands(num);
+
+            let sum = 0;
+            // 以下两行等价
+            sum = Math.pow(ones, 4) + Math.pow(tens, 4) +
+                Math.pow(hundreds, 4) + Math.pow(thousands, 4);
+
+            if (sum === num) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        count = 1000
+        while (count < 10000) {
+            if (isNarcissisticFour(count)) {
+                console.log(count);
+            }
+            count++;
+        }
+
+        // 判断100以内的所有同构数
+        function isOmorph(num) {
+            if (count < 10) {
+                if (count === num * num % 10) {
+                    return true;
+                }
+            }
+
+            if (count >= 10) {
+                if (count === num * num % 100) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        count = 1
+        while (count < 100) {
+            if (isOmorph(count)) {
+                console.log(count + '*' + count + '=' + count * count);
+            }
+            count++
+        }
+    </script>
+</body>
+
+</html>

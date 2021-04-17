@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function ones(num){
+      return num%10;
+    }
+    function tens(num){
+      return Math.floor(num/10%10);
+    }
+    function hunders(num){
+      return Math.floor(num/100%10);
+    }
+    function thousands(num){
+      return Math.floor(num/1000);
+    }
+    console.log(thousands(2568));
+    function siWeiShuiXianHuaShu(num){
+      let numTens=tens(num);
+      let numHunds=hunders(num);
+      let numThous=thousands(num);
+      let numOnes=ones(num);
+      sum=Math.pow(numTens,4)+Math.pow(numHunds,4)+Math.pow(numThous,4)+Math.pow(numOnes,4);
+      if(sum===num){
+        return true;
+      }else{
+        return false;
+      }
+    }
+    let count=1000;
+    while (count<10000){
+      if(siWeiShuiXianHuaShu(count)){
+        console.log(count);
+      }
+      count++;
+    }
+  </script>
+</body>
+</html>
