@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 从用户处得到的是字符串'1'
+    let weekday = prompt('请输入数字');
+    let weekdayStr = '';
+    // 此处对比的是数字 1 parseInt() 用于强制把字符串的'1'转化为数字1
+    switch (parseInt(weekday)) {
+      case 1: weekdayStr = '礼拜一'; break;
+      case 2: weekdayStr = '礼拜二'; break;
+      case 3: weekdayStr = '礼拜三'; break;
+      case 4: weekdayStr = '礼拜四'; break;
+      case 5: weekdayStr = '礼拜五'; break;
+      case 6: weekdayStr = '礼拜六'; break;
+      case 7: weekdayStr = '礼拜天'; break;
+      default: weekdayStr = '输入不合法，请输入1-7之间的数字';
+    }
+    document.write(weekdayStr);
+
+
+    let score = prompt('请输入考试得分');
+    let rank = '';
+// 此处应有检查用户输入是否是百分制成绩的代码，略
+    switch (Math.floor(score/10)) {
+      case 0:
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5: rank = '不及格'; break;
+      case 6:
+      case 7: rank = '及格'; break;
+      case 8: rank = '良好'; break;
+      case 9: rank = '优秀'; break;
+    }
+    console.log(rank);
+  </script>
+</body>
+</html>
