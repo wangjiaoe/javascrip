@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九九乘法表</title>
+</head>
+
+<body>
+    <script>
+        // 主要考察各位两个方面的知识
+        // 1 字符串拼接的概念是否建立
+        // 2 进一步熟悉循环的嵌套 
+
+        // let name = '张三';
+        // let age = 17;
+
+        // console.log(name);
+        // console.log(age);
+        // 计算机程序，与用户的交互也是非常重要的一环
+        // console.log('你好，我的名字叫' + name + '今年' + age + '岁了');
+
+        // 1 括号出现的位置
+        // 2 ’   ‘ '    '       “” "" 的区别
+        // 3 引号出现的位置
+        // 4 +号出现的位置和意义
+        // let num = 9;
+        document.write('<table>');
+        for (let numQian = 1; numQian <= 9; numQian++) {
+            document.write('<tr>');
+            for (let numHou = 1; numHou <= 9; numHou++) {
+                if (numQian <= numHou) {
+                    // 输出 2 * 3 = 
+                    document.write('<td align="right" width="100">' + numQian + ' * ' + numHou + ' = </td>');
+                    // 输出 6
+                    document.write('<td align="right">' + numQian * numHou + '</td>');
+                } else {
+                    document.write('<td width="100"><td></td>');
+                }
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+
+        // for (let num = 2; num <= 9; num++) {
+        //     document.write('2*' + num + '=' + 2 * num + '&nbsp&nbsp&nbsp');
+        // }
+        // document.write('<br>');
+
+        // for (let num = 3; num <= 9; num++) {
+        //     document.write('3*' + num + '=' + 3 * num + '&nbsp&nbsp&nbsp');
+        // }
+        // document.write('<br>');
+
+        // for (let num = 4; num <= 9; num++) {
+        //     document.write('4*' + num + '=' + 4 * num + '&nbsp&nbsp&nbsp');
+        // }
+        // document.write('<br>');
+        // console.log('1*num=1*num');
+        // ...
+        // console.log('1*num=1*num');
+    </script>
+</body>
+
+</html>
