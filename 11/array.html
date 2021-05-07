@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 定义
+        let arr = [];
+        // 赋值
+        arr = [98, 28, 61, 78, 85];
+        // let arr = [98, 28, 61, 78, 85]
+
+        // 利用arr.length 获取数组的长度
+        console.log(arr.length);
+        // 输出
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        };
+
+        let score = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54];
+        // 数组和变量中存储的数据是一致的，请分别计算score，总分和平均分
+        let sum = 0
+            // score[1] [3] [5] [7] [9]
+        for (let i = 0; i < score.length; i++) {
+            if (i % 2 == 0) {
+                sum = sum + score[i];
+            }
+        }
+        console.log('总分是' + sum + ',' + '平均分是' + sum / score.length);
+
+        let iceCream = ['香草', '巧克力', '抹茶', '草莓', '蓝莓', '榴莲', '芥末'];
+        let num1, num2;
+
+        num1 = Math.floor(Math.random() * iceCream.length);
+
+        do {
+            num2 = Math.floor(Math.random() * iceCream.length);
+            if (num1 !== num2) {
+                break;
+            }
+        } while (1);
+
+        console.log(iceCream[num1] + iceCream[num2]);
+    </script>
+</body>
+
+</html>

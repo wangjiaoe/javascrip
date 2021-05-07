@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [98,21,56,87,75];
+    for(i=0;i<arr.length;i++){
+    console.log(arr[i]);
+    }
+    let scores = [60,50,60,58,54,54,58,50,52,54];
+    let zong =0 ;
+    for(shu = 0; shu<scores.length;shu++){
+      zong=zong+scores[shu];
+    }
+    console.log(zong);
+    let iceCream = ['草莓味', '柠檬味', '绿豆味','芥末味','牛奶味','芝士味','辣条味'];
+    let num1,num2;
+    num1=Math.floor(Math.random()*iceCream.length);
+    // do{
+    //   num2=Math.floor(Math.random()*iceCream.length);
+    //   if(num1!==num2){
+    //     break;
+    //   }
+    // }while(1);
+    num2=Math.floor(Math.random()*iceCream.length);
+    while(1){
+        if(num1!==num2){
+        break;
+      }
+    }
+    console.log(iceCream[num1]+iceCream[num2])
+
+  </script>
+</body>
+</html>
