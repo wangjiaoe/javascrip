@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let scores = [60,50,60,58,54,54,58,50,52,54];
+    let anotherArr = [1,2,3,4];
+    function is(arr,num){
+      for(let i = 0;i<arr.length;i++){
+        if(arr[i]==num){
+          return true ;
+        }
+      }
+      return false ;
+    }
+    console.log(is(scores,58));
+
+    function find(arr, num){
+      for(let i = 0;i<arr.length;i++){
+        if(arr[i]==num){
+          return i ;
+        }
+      }
+      return -1 ;
+    }
+    console.log(find(anotherArr, 58));
+    let shuzhi=0;
+    function times(num){
+      for(let i = 0;i<scores.length;i++){
+        if(scores[i]==num){
+          shuzhi++;
+        }
+      }
+      return shuzhi ;
+    }
+    console.log(times(54));
+    function arr(num){
+      for(let i = 0;i<scores.length;i++){
+        if(scores[i]==num){
+        }
+      }
+    }
+  </script>
+</body>
+</html>
