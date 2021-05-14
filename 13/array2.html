@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组里的项，英语item，Exist 存在的意思
+        // 函数，循环，分支，数组
+        // 查询数组中是否存在指定项
+        //            要提供  数组   目标
+        function isItemExist(arr, targetItem) {
+            // 循环用于遍历数组中的所有项
+            for (let i = 0; i < arr.length; i++) {
+                // 将数组中的每一项，都和目标去比较
+                if (arr[i] === targetItem) {
+                    // 一旦找到，返回 true
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        isItemExist(score, 52);
+        console.log(isItemExist(score, 50));
+        console.log(isItemExist(score, 88));
+
+        function findItemIndex(arr, targetItem) {
+            // 循环用于遍历数组中的所有项
+            for (let i = 0; i < arr.length; i++) {
+                // 将数组中的每一项，都和目标去比较
+                if (arr[i] === targetItem) {
+                    // 一旦找到，返回索引
+                    return i;
+                }
+            }
+
+            // 找不到，返回-1
+            return -1;
+        }
+
+        console.log(findItemIndex(score, 52));
+        console.log(findItemIndex(score, 50));
+        console.log(findItemIndex(score, 88));
+
+        // 返回目标项出现的次数
+        function itemCount(arr, targetItem) {
+            let count = 0;
+            // 循环用于遍历数组中的所有项
+            for (let i = 0; i < arr.length; i++) {
+                // 将数组中的每一项，都和目标去比较
+                if (arr[i] === targetItem) {
+                    // 一旦找到，计数+1
+                    count++;
+                }
+            }
+
+            // 遍历完成，返回计数结果
+            return count;
+        }
+
+        console.log(itemCount(score, 54));
+        console.log(itemCount(score, 70));
+        console.log(itemCount(score, 88));
+
+        let score = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 70];
+        // 以数组的形式，返回目标项出现的索引 [4,5,9] [10] []
+        function findAllItemIdx(arr, targetItem) {
+            let count = 0;
+            // 定义了一个变量j，记录新数组的下标索引的变化
+            let j = 0;
+            // 定义一个空数组
+            let itemIdxArr = [54];
+            // 循环用于遍历数组中的所有项
+            for (let i = 0; i < arr.length; i++) {
+                // 将数组中的每一项，都和目标去比较
+                if (arr[i] === targetItem) {
+                    // 一旦找到，将索引i放入新数组
+                    itemIdxArr[j] = i;
+                    // itemIdxArr[0] = 4;
+                    // itemIdxArr[1] = 5;
+                    // itemIdxArr[2] = 9;
+                    // 新数组索引j++
+                    j++;
+                }
+            }
+
+            // 遍历完成，返回统计结果
+            return itemIdxArr;
+        }
+        console.log(findAllItemIdx(score, 54));
+        console.log(findAllItemIdx(score, 70));
+        console.log(findAllItemIdx(score, 88));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="zh-cn">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let scores = [60,50,60,58,54,54,58,50,52,54];
+    function wei(array,num){
+    array[array.length] = num;
+    return array ;
+    }
+    console.log(wei(scores,90));
+    function head(array,num){
+      for(let i=array.length;i>0;i--){
+        array[i] = array[i-1];
+      }
+      array[0]=num;
+      return array ;
+    }
+    console.log(head(scores,90));
+
+
+    let strArr = ['h','o','l','l','o'];
+    let numArr = [1,2,3,4,5];
+    function zifu(array){
+      let str = '';
+      for(let x = 0;x<array.length;x++){
+        str = str+ array[i]
+      }
+      return array;
+    }
+    console.log(zifu(strArr));
+
+  </script>
+</body>
+</html>

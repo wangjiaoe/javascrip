@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let score = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 70];
+        // newItem = 'A';
+
+        // // 将新的item插入数组的末尾
+        // function addToEnd(arr, item) {
+        //     arr[arr.length] = item;
+        //     return arr;
+        // }
+        // console.log(addToEnd(score, newItem));
+
+        // // 将新的item插入数组的头部
+        // function addToHead(arr, item) {
+        //     for (let i = arr.length; i > 0; i--) {
+        //         arr[i] = arr[i - 1];
+        //     }
+        //     arr[0] = item;
+        //     return arr;
+        // }
+        // console.log(addToHead(score, 'B'));
+
+        // // 将新的item插入数组的任意位置
+        // function insertItem(arr, idx, item) {
+        //     for (let i = arr.length; i > idx; i--) {
+        //         arr[i] = arr[i - 1];
+        //     }
+        //     arr[idx] = item;
+        //     return arr;
+        // }
+        // console.log(insertItem(score, 5, 'C'));
+
+        // // 将数组转化为字符串
+        let strArr = ['h', 'e', 'l', 'l', 'o', 'w'];
+        let numArr = [1, 2, 3, 4, 5]
+
+        // function arrToString(arr) {
+        //     let str = '';
+        //     for (let i = 0; i < arr.length; i++) {
+        //         str = str + arr[i];
+        //     }
+        //     return str;
+        // }
+        // console.log(arrToString(strArr));
+        // console.log(arrToString(numArr));
+        // 'hellow'  '12345'
+        // 合并两个数组
+        // ['h', 'e', 'l', 'l', 'o', 'w', 1,2,3,4,5]
+        function annexArr(arr1, arr2) {
+            let newArr = []
+            let arr1Length = arr1.length;
+            newArr = arr1;
+            // 解决方案2: newArr = [...arr1];
+            for (let i = 0; i < arr2.length; i++) {
+                newArr[arr1Length] = arr2[i];
+                arr1Length++;
+            }
+            return newArr;
+        }
+
+        console.log(annexArr(strArr, numArr));
+
+        // 解决方案1
+        // strArr = ['h', 'e', 'l', 'l', 'o', 'w'];
+        // numArr = [1, 2, 3, 4, 5]
+
+        // 目前的写法，写到这里会出错，问1：为什么出这个错？
+        console.log(annexArr(numArr, strArr));
+    </script>
+</body>
+
+</html>
