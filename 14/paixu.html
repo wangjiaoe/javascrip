@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let scores = [60,50,60,58,54,54,58,50,52,54];
+    // for(let j=0;j<scores.length;j++){
+    //   for(let i=j+1;i<scores.length;i++){
+    //     if(scores[j]>scores[i]){
+    //       let temp=scores[j];
+    //       scores[j]=scores[i];
+    //       scores[i]=temp;
+    //     }
+    //   }
+    // }
+
+
+    // 冒泡排序法
+    for(let j=0;j<scores.length-1;j++){
+      for(let i=0;i<scores.length-j;i++){
+      if(scores[i]>scores[i+1]){
+        let temp=scores[i];
+        scores[i]=scores[i+1];
+        scores[i+1]=temp;
+        }
+      }
+    }
+    console.log(scores);
+  </script>
+</body>
+</html>

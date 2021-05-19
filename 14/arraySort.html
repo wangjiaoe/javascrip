@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [60, 150, 260, 58, 354, 354, 578, 50, 52, 54, 70];
+
+        // for (let j = 0; j < arr.length; j++) {
+        //     for (let i = j + 1; i < arr.length; i++) {
+        //         console.log('arr[' + j + ']' + '=' + arr[j]);
+        //         console.log('arr[' + i + ']' + '=' + arr[i]);
+        //         if (arr[j] > arr[i]) {
+        //             let temp = 0;
+        //             temp = arr[j];
+        //             arr[j] = arr[i];
+        //             arr[i] = temp;
+        //         }
+        //     }
+        // }
+        // arr.sort()
+
+        // 1 冒泡法排序的第一次遍历
+        // 思考： 为什么 arr.length - 1
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                let temp;
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+        // 此时输出数组就会发现，
+        console.log("经过一次遍历后，数组中最大的元素已经落在了数组的最后面");
+        console.log(arr);
+        console.log('-----------分割线-------------------')
+
+        // 2 不急着写完整代码，不妨再进行第二次遍历
+        // 思考，为何是 arr.length - 2
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                let temp;
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+        console.log('经过第二次遍历后，数组中最大的两个元素已经落在了数组的最后面');
+        console.log(arr);
+        console.log('-----------分割线-------------------')
+
+        // 写一个外层循环，重复以上步骤，即可完成数组的排序
+        arr = [60, 150, 260, 58, 354, 354, 578, 50, 52, 54, 70];
+        for (let j = 0; j < arr.length - 1; j++) {
+            // 思考: 为什么是 arr.lenght - j
+            for (let i = 0; i < arr.length - j; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    let temp;
+                    temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                }
+            }
+            console.log('第' + (j + 1) + '次循环后:' + arr);
+        }
+        console.log('最终结果')
+        console.log(arr);
+    </script>
+</body>
+
+</html>
