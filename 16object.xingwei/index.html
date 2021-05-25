@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="zh-cn">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let car = {
+      make:'劳斯莱斯',
+      passengers:4,
+      mileage:5000,
+      fule:100,
+      color:'黑色',
+      isStart:false,
+      drive:function(){
+        if ((car.fule>0 )&& (car.passengers>=realPassengers)){
+        this.isStart=true;
+        this.fule--;
+        this.mileage++;}
+      },
+      getColor:function(){
+        return this.color;
+      },
+      setColor:function(newColor){
+        car.color=newColor;
+      },
+    };
+    // car.drive();
+    // console.log(car);
+    console.log(car.color);
+    car.setColor('银白');
+    console.log(car.color);
+    let realPassengers=4;
+    car.drive();
+    console.log(car);
+  </script>
+</body>
+</html>
