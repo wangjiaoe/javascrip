@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let person = {
+      name: '杜宇阳',
+      age: 17,
+      food: 80,
+      happyness: 100,
+
+      // 人类呢, 一定要吃饭,如果food>100,那就吃不下
+      // 如果 food < 0 就会饿死
+      eat: function () {
+        if( this.food + 10 <= 100) {
+          this.food = this.food + 10;
+          console.log('笑死，根本吃不饱');
+        } else{
+          this.food = 100;
+          console.log('吃饱了，但还没有完全吃饱');
+        }
+      },
+
+      alive: function() {
+        // 把person对象 this指向的存储空间， 起来一个叫that的名字
+        let that = this;
+
+        let timer = setInterval(function() {
+          console.log('当前food值：' + that.food );
+          that.food = that.food - 20;
+
+          if(that.food < 50 && that.food >= 0) {
+          console.log('饿死我了，饿死我了，giegie我想吃你给我买的饭饭');
+          }
+
+          if (that.food < 0) {
+            console.log('你失去我了，去死吧🗡人');
+            // 计时停止 
+            // 停止名为time的计时器
+            clearInterval(timer);
+          }
+        }, 3000)
+      },
+
+      touwei: function() {
+        let that = this;
+
+        let timerr = setInterval(function() {
+          console.log('当前😀的肚子叫的' + that.food + '程度' );
+          that.food = that.food + 10;
+
+          if(that.food >= 40 && that.food < 60) {
+            console.log('亚蕾亚蕾，有点饿了哦');
+          }
+
+          if(that.food > 100 ) {
+            console.log('撑死我了，阿巴阿巴');
+            clearInterval(timerr);
+          }
+
+          if(that.food <= 0) {
+            console.log('饿死我了');
+            clearInterval(timerr);
+          }
+        }, 4000) 
+      }
+    }
+    // person.alive();
+    person.touwei();
+    // person.eat();
+    // person.eat();
+    // person.eat();
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let person={
+      name:'蒋瑶晴',
+      age:17,
+      food:80,
+      happyness:50,
+      // 人类一定要吃饭，如果food>100，那就吃不下
+      // 如果food<0就会饿死
+      eat:function(){
+        // 完成eat（吃）这个行为，每次eat,food+10
+        if(this.food+10<100){
+          this.food=this.food+10;
+          console.log('打发叫花子呢？');
+        }else{
+          this.food=100;
+          console.log('吃的比🐖多');
+        }
+      },
+      alive:function(){
+        // 把person对象的this指向的存储空间，起了一个叫that的名字
+        let that=this;
+        // setInterval函数，用于每间隔一定时间执行规定代码，和setTimeout
+        // setInterval(function,time)
+        let timer=setInterval(function(){
+          // 作用域错误，引起的bug
+          console.log('当前food值:'+that.food);
+          that.food=that.food-20;
+          if(that.food<50&&that.food>=0){
+            console.log('饿了🙂');
+          }if(that.food<0){
+            console.log('死了👻');
+          // 计时停止
+          // 实际上就是，停止timer计时器
+            clearInterval(timer);
+          }
+        },3000);
+      },
+      touWei:function(){
+        let that=this;
+        let timerr=setInterval(function(){
+          console.log('当前food值'+that.food);
+          that.food=that.food+10;
+          if(that.food>=40&&that.food<60){
+            console.log('👴饿了');
+          }
+          if(that.food==100){
+            console.log('吃饱了');
+            clearInterval(timerr);
+          };
+          if(that.food<=0){
+            console.log('👻');
+            clearInterval(timerr);
+          }
+        },2000);
+      },
+    }
+    // person.eat();
+    // person.eat();
+    // person.eat();
+    // person.eat();
+    // person.eat();
+    person.alive();
+    person.touWei();
+  </script>
+</body>
+</html>
