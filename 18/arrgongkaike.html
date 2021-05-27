@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let time = ['大清早', '正午时', '后半夜', '天擦黑'];
+    let place = ['厕所', '马桶上', '动物园', '夜店'];
+    let person = ['阿旺', '阿点', '阿涛', '猩猩'];
+    let event = ['吃火锅', '表演钢管舞', '吃螺蛳粉', '吃臭臭'];
+    let len1 = time.length;
+    let len2 = place.length;
+    let len3 = person.length;
+    let len4 = event.length;
+    for(let i = 1; i <=20; i++) {
+      let rands1 = Math.floor(Math.random() * len1);
+      let rands2 = Math.floor(Math.random() * len2);
+      let rands3 = Math.floor(Math.random() * len3);
+      let rands4 = Math.floor(Math.random() * len4);
+      console.log(person[rands3] + time[rands1] + '在' + place[rands2] + event[rands4]);
+    }
+    let oneTow = Math.floor(Math.random() * 4);
+    console.log(oneTow);
+    </script>
+</body>
+</html>
