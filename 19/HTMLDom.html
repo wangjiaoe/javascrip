@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM 文档对象模型</title>
+</head>
+  <style>
+    #kk {
+      width: 80px;
+      height: 80px;
+      border: 1px solid red;
+    }
+    #ll {
+      width: 80px;
+      height: 80px;
+      border: 1px solid yellow;
+    }
+    #pp {
+      width: 80px;
+      height: 80px;
+      border: 1px solid green;
+    }
+  </style>
+<body>
+    <!-- <p id='xq'>pppppp</p>
+    <ul>
+        <li>
+            aaaaa
+        </li>
+        <li id='lb'>
+            bbbb
+        </li>
+    </ul> -->
+    <div id='fk'></div>
+    <div id='kk'></div>
+    <div id='ll'></div>
+    <div id='pp'></div>
+    <script>
+        // // 如何获取页面中对象的方法
+        // let obj1 = document.getElementById('xq');
+        // let obj2 = document.getElementById('lb');
+        // let obj3 = document.getElementById('fk');
+        // // 如何修改对象中文字的方法
+        // obj1.innerHTML = '哈哈哈哈，我重见天日了！';
+        // // 如何修改对象css样式的方法
+        // obj2.style.color = 'red';
+        // obj3.style.width = '100px';
+        // obj3.style.height = '200px';
+        // obj3.style.backgroundColor = 'green';
+        // // console.log(obj1);
+        // // console.log(obj2);
+        let myDate = new Date();
+        let myDate1 = document.getElementById('fk');
+        setInterval(() => {
+          myDate1.innerHTML = myDate;
+          myDate = new Date();
+        }, 1000);
+        console.log(myDate);
+
+        let fangkuai = document.getElementById('kk');
+        let fangkuai1 = document.getElementById('ll');
+        let fangkuai2 = document.getElementById('pp')
+                  setTimeout(() => {
+            let color = 'red';
+            fangkuai.style.backgroundColor = color;
+        }, 0);
+        setTimeout(() => {
+            let color4 = 'white';
+            fangkuai.style.backgroundColor = color4;
+        }, 15000);
+        setTimeout(() => {
+          let color = 'red';
+            fangkuai.style.backgroundColor = color;
+        }, 31000);
+
+        setTimeout(() => {
+          let color2 = 'green';
+          fangkuai2.style.backgroundColor = color2;
+        }, 15000);
+        setTimeout(() => {
+          let color6 = 'white'
+          fangkuai2.style.backgroundColor = color6;
+        }, 30000);
+
+        setTimeout(() => {
+          let color1 = 'yellow';
+          fangkuai1.style.backgroundColor = color1;
+        }, 30000);
+        setTimeout(() => {
+          let color5 = 'white'
+          fangkuai1.style.backgroundColor = color5;
+        }, 30200);
+        setTimeout(() => {
+          let color1 = 'yellow';
+          fangkuai1.style.backgroundColor = color1;
+        }, 30400);
+        setTimeout(() => {
+          let color5 = 'white'
+          fangkuai1.style.backgroundColor = color5;
+        }, 30600);
+        setTimeout(() => {
+          let color1 = 'yellow';
+          fangkuai1.style.backgroundColor = color1;
+        }, 30800);
+        setTimeout(() => {
+          let color5 = 'white'
+          fangkuai1.style.backgroundColor = color5;
+        }, 31000);
+
+        setInterval(() => {
+          setTimeout(() => {
+            let color = 'red';
+            fangkuai.style.backgroundColor = color;
+        }, 0);
+        setTimeout(() => {
+            let color4 = 'white';
+            fangkuai.style.backgroundColor = color4;
+        }, 15000);
+        setTimeout(() => {
+          let color = 'red';
+            fangkuai.style.backgroundColor = color;
+        }, 31000);
+
+        setTimeout(() => {
+          let color2 = 'green';
+          fangkuai2.style.backgroundColor = color2;
+        }, 15000);
+        setTimeout(() => {
+          let color6 = 'white';
+          fangkuai2.style.backgroundColor = color6;
+        }, 30000);
+
+        setTimeout(() => {
+          let color1 = 'yellow';
+          fangkuai1.style.backgroundColor = color1;
+        }, 30000);
+        setTimeout(() => {
+          let color5 = 'white';
+          fangkuai1.style.backgroundColor = color5;
+        }, 30200);
+        setTimeout(() => {
+          let color1 = 'yellow';
+          fangkuai1.style.backgroundColor = color1;
+        }, 30400);
+        setTimeout(() => {
+          let color5 = 'white';
+          fangkuai1.style.backgroundColor = color5;
+        }, 30600);
+        setTimeout(() => {
+          let color1 = 'yellow';
+          fangkuai1.style.backgroundColor = color1;
+        }, 30800);
+        setTimeout(() => {
+          let color5 = 'white';
+          fangkuai1.style.backgroundColor = color5;
+        }, 31000);
+
+        }, 31000);
+
+
+
+
+    </script>
+</body>
+
+</html>

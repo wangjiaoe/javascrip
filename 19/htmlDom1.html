@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #red{
+            width:20px;
+            height:20px;
+            border:1px solid red;
+        }
+        #yellow{
+            width:20px;
+            height:20px;
+            border:1px solid yellow;
+        }
+        #green{
+            width:20px;
+            height:20px;
+            border:1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div id="red"></div>
+    <div id="yellow"></div>
+    <div id="green"></div>
+    <script>
+        let red=document.getElementById('red');
+        let yellow=document.getElementById('yellow');
+        setInterval(()=>{
+            red.style.background='red';
+        },5000);
+        setInterval(()=>{
+            red.style.background='white';
+        },7000);
+        setInterval(() => {
+            yellow.style.background='yellow';
+        },7000);
+        setInterval(() => {
+            yellow.style.background='white';
+        }, 9000);
+        setInterval(() => {
+            green.style.background='green';
+        }, 9000);
+        setInterval(() => {
+            green.style.background='white';
+        }, 10000);
+    </script>
+</body>
+</html>
