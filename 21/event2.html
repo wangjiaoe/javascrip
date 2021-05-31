@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='event2.js'></script>
+    <style>
+        .box {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+        
+        #div1 {
+            background-color: cadetblue;
+        }
+        
+        #div2 {
+            background-color: crimson;
+        }
+        
+        .position1 {
+            top: 130px;
+            left: 200px;
+        }
+        
+        .position2 {
+            top: 350px;
+            left: 150px;
+        }
+        
+        .position3 {
+            top: 200px;
+            left: 100px;
+        }
+        
+        .position4 {
+            top: 30px;
+            left: 200px;
+        }
+        
+        .position5 {
+            top: 80px;
+            left: 320px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button onclick="sayHi()">click me</button> -->
+    <div class="box position2" id='div1' onmouseover="dontTouchMe()"></div>
+    <div class="box" id='div2' onmouseover="dontTouchMeToo()"></div>
+</body>
+
+</html>
