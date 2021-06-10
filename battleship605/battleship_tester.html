@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Battleship</title>
+    <meta charset="utf-8">
+    <style>
+        /* 使背景为黑色，表格本身为黑底 */
+        body {
+            background-color: black;
+        }
+        /* 相对定位，调整图片宽和外边距，将表格图片置于网页中央，导入图片 */
+        div#board {
+            position: relative;
+            width: 1024px;
+            height: 863px;
+            margin: auto;
+            background: url("photo/board.jpg") no-repeat;
+        }
+        /* 用于显示信息，当玩家击沉战舰后提示，位于页面的左上角最顶端 */
+        div#messageArea {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            color: rgb(83, 175, 19);
+        }
+        /* 放入两张战舰图片 */
+        .hit {
+            background: url("photo/ship.png") no-repeat center center;
+        }
+        
+        .miss {
+            background: url("photo/miss.png") no-repeat center center;
+        }
+        .boom{
+            width: 94px;
+            height: 94px;
+            background: url("photo/baozha4.png")no-repeat center center;
+        }
+        
+        /* 设置输入框在右下角为绿色 */
+        form {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            padding: 15px;
+            background-color: rgb(83, 175, 19);
+        }
+        /* 设置输入框内部描边，底色 */
+        form input {
+            background-color: #98CF71;
+            border-color: rgb(83, 175, 19);
+            font-size: 1em;
+        }
+        /* 使表格与游戏表格图对齐 */
+        table {
+            border-spacing: 0px;
+            position: absolute;
+            left: 173px;
+            top: 98px;
+        }
+        /* 定义表格的长和宽，使每个格子与图片一一对应 */
+        td {
+            width: 94px;
+            height: 94px;
+        }
+    </style>
+    <!-- 链接js文档 -->
+    <script src="battleship_tester.js"></script>
+</head>
+
+<body>
+    <!-- 用于获取玩家输入的表单 -->
+    <div id="board">
+        <div id="messageArea"></div>
+        <table>
+            <!-- 对应网格中的行和列 -->
+            <tr>
+                <td id="00"></td>
+                <td id="01"></td>
+                <td id="02"></td>
+                <td id="03"></td>
+                <td id="04"></td>
+                <td id="05"></td>
+                <td id="06"></td>
+            </tr>
+            <tr>
+                <td id="10"></td>
+                <td id="11"></td>
+                <td id="12"></td>
+                <td id="13"></td>
+                <td id="14"></td>
+                <td id="15"></td>
+                <td id="16"></td>
+            </tr>
+            <tr>
+                <td id="20"></td>
+                <td id="21"></td>
+                <td id="22"></td>
+                <td id="23"></td>
+                <td id="24"></td>
+                <td id="25"></td>
+                <td id="26"></td>
+            </tr>
+            <tr>
+                <td id="30"></td>
+                <td id="31"></td>
+                <td id="32"></td>
+                <td id="33"></td>
+                <td id="34"></td>
+                <td id="35"></td>
+                <td id="36"></td>
+            </tr>
+            <tr>
+                <td id="40"></td>
+                <td id="41"></td>
+                <td id="42"></td>
+                <td id="43"></td>
+                <td id="44"></td>
+                <td id="45"></td>
+                <td id="46"></td>
+            </tr>
+            <tr>
+                <td id="50"></td>
+                <td id="51"></td>
+                <td id="52"></td>
+                <td id="53"></td>
+                <td id="54"></td>
+                <td id="55"></td>
+                <td id="56"></td>
+            </tr>
+            <tr>
+                <td id="60"></td>
+                <td id="61"></td>
+                <td id="62"></td>
+                <td id="63"></td>
+                <td id="64"></td>
+                <td id="65"></td>
+                <td id="66"></td>
+            </tr>
+        </table>
+        <!-- <form>
+            用于输入猜测的位置
+            <input type="text" id="guessInput" placeholder="A0">
+            按钮，用于获取玩家猜测的数值
+            <input type="button" id="fireButton" value="Fire!">
+        </form> -->
+    </div>
+</body>
+
+</html>
